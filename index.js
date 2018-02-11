@@ -65,7 +65,7 @@ function sendGreeting(msg,sayHello = true) {
 function sendCurrencyScreen(chatId) {
     bot.sendMessage(chatId,`Bilge  Оратлығы жайында:`,{
 reply_markup: {
-    inline_keyboard:[
+    keyboard:[
         [
             {
                 text:'Bilge орталығы жайында қысқаша ақпарат',

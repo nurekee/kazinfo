@@ -8,6 +8,13 @@ const bot = new TelegramBot(TOKEN,{
 const KB = {
     currency:'Жоба жайында',
     water: 'Мәзір ',
+    hoba:'Жоба жайында',
+    oku:'Bilgen Robotics оқушыға не береді ?',
+    artyk:'Bilgen Robotics-тың артықшылықтары:',
+    maksat:'Bilgen Robotics-тың алға қойған мақсаттары:',
+    prins:'Bilgen Robotics-тың негізгі принциптері',
+    baga:'Bilgen Robotics курстарының бағасы:',
+    sony:'Cұрақтар бойынша',
     back:'Кері қайту'
 }
 bot.onText(/\/start/, msg => {
@@ -20,9 +27,15 @@ switch (msg.text)
         sendCurrencyScreen(msg.chat.id)
         break
     case KB.water:
+        sendPictureScreen(msg.chat.id)
         break
     case KB.back:
-      sendGreeting(msg,fale)
+      sendGreeting(msg,false)
+
+    case KB.hoba:
+    case KB.oku:
+    case KB.sony:
+        sendWaterByName(msg.chat.id,msg.text)
 }
 
 })
@@ -35,7 +48,6 @@ const base = query.data
     request(`https://api.fixer.io/latest?symbols= ${symbol} &base=${base}`,(error,response,body) =>{
      if (error) throw new Error(error)
 if(response.statusCode === 2000){
-
          const  currencyData = JSON.parse(body)
    console.log(currencyData)
     /* const html = `<b>1 ${symbol}</b> - <em>${currencyData.rates[symbol]} ${base} </em>`
@@ -89,4 +101,15 @@ reply_markup: {
     })
 
 
+}
+
+function sendWaterScreen(chatId){
+    bot.sendMessage(chatId,`Таңданыз`,{
+        reply_markup:{
+            keyboard:[
+                [KB.hoba,KB.oku,KB.sony],
+                [KB.back]
+            ]
+        }
+    })
 }

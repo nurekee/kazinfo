@@ -1,0 +1,21 @@
+{
+  "name": "kazinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12",
+    "request": "^2.83.0"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "engines": {
+    "node":"8.9.4"
+  },
+  "author": "",
+  "license": "ISC"
+}

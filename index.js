@@ -63,24 +63,24 @@ function sendGreeting(msg,sayHello = true) {
 
 }
 function sendCurrencyScreen(chatId) {
-    bot.sendMessage(chatId,`Валютаны таңдаңыз:`,{
+    bot.sendMessage(chatId,`Bilge  Оратлығы жайында:`,{
 reply_markup: {
     inline_keyboard:[
         [
             {
-                text:'Доллар',
+                text:'Bilge орталығы жайында қысқаша ақпарат',
                 callback_data:'USD'
             }
         ],
         [
             {
-                text:'Еуро',
+                text:'Орталық Қазақстанның 14 облысы мен 2 Республикалық маңызы бар қаласында оқушы жастарға қосымша білім берумен айналысады',
                 callback_data:'EUR'
             }
         ],
         [
             {
-                text:'Рубль',
+                text:'Қазіргі таңда Республика бойынша орталықта білім алушылардың саны 15000-нан асады',
                 callback_data:'RUB'
             }
         ]

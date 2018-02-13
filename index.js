@@ -80,7 +80,8 @@ function sendPictureScreen(chatId) {
                     KB.prins],
                 [KB.baga,
                     KB.sony],
-                [KB.back]
+                [KB.back],
+                       ['Жоба авторы: Нұрғиса Тілдабай']
             ]
         }
     })
@@ -94,7 +95,8 @@ function sendGreeting(msg, sayHello = true) {
     bot.sendMessage(msg.chat.id, text, {
         reply_markup: {
             keyboard: [
-                [KB.currency, KB.picture]
+                [KB.currency, KB.picture],
+                ['Жоба авторы: Нұрғиса Тілдабай']
             ]
         }
     })
